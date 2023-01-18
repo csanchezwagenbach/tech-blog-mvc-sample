@@ -1,0 +1,30 @@
+{
+  "name": "tech-blog-mvc-sample",
+  "version": "1.0.0",
+  "description": "A sample CMS-style blog site utilizing the MVC paradigm in its architectural structure",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csanchezwagenbach/tech-blog-mvc-sample.git"
+  },
+  "keywords": [],
+  "author": "Colby Sanchez Wagenbach",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csanchezwagenbach/tech-blog-mvc-sample/issues"
+  },
+  "homepage": "https://github.com/csanchezwagenbach/tech-blog-mvc-sample#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "mysql2": "^3.0.1",
+    "sequelize": "^6.28.0"
+  }
+}
