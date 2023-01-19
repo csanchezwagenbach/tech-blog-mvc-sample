@@ -1,0 +1,17 @@
+[
+    {
+        "title": "CSS For Dummies",
+        "content": "It's all about knowing the different properties and how to modify them by assigning new values. Oh, yeah, and don't forget to check what default settings are for various elements. Keeping that in mind would have saved me a lot of time!",
+        "author_id": 2
+    },
+    {
+        "title": "HTML and You",
+        "content": "At the end of the day, it's like you're building a skeleton. That's right, a skeleton!",
+        "author_id": 1
+    },
+    {
+        "title": "JavaScript This, JavaScript That",
+        "content": "Did you think coding was just building skeletons and styling them?! I wish! Welcome to the rest of your coding life.",
+        "author_id": 5
+    }
+]

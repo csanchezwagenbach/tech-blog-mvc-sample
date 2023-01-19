@@ -1,0 +1,22 @@
+[
+    {
+        "content": "I always thought CSS was way more difficult!",
+        "author_id": 3,
+        "post_id": 1
+    },
+    {
+        "content": "Ugh, I've been struggling with this! Good to know I'm not the only one!",
+        "author_id": 5,
+        "post_id": 1
+    },
+    {
+        "content": "It's just so dry! I can't get excited about it!",
+        "author_id": 4,
+        "post_id": 2
+    },
+    {
+        "content": "This is what I always imagined coding would be like!",
+        "author_id": 4,
+        "post_id": 3
+    }
+]
