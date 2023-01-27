@@ -62,12 +62,22 @@ router.get("/post/:id", withAuth, async (req, res) => {
             include: [
                 {
                     model: User
+                },
+                {
+                    model: Comment, 
+                    include: [
+                        {
+                            model: User
+                        }
+                    ]
                 }]
         });
 
+
+
         const post = postData.get({ plain: true });
 
-        res.render("post", { post, logged_in: true });
+        res.render("post", {post, logged_in: true });
     } catch {
         res.status(500).json(response)
     }
