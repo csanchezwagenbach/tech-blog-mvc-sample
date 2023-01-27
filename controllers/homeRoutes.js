@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { response } = require("express");
 const { User, Post, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
@@ -35,7 +36,7 @@ router.get("/login", async (req, res) => {
     }
 });
 
-router.get("/dashboard", async (req, res) => {
+router.get("/dashboard", withAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ["password"] },
@@ -52,6 +53,33 @@ router.get("/dashboard", async (req, res) => {
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
+    }
+});
+
+router.get("/post/:id", withAuth, async (req, res) => {
+    try {
+        const postData = await Post.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User,
+                    include: [
+                        {
+                            model: Comment,
+                            include: [
+                                {
+                                    model: User
+                                }
+                            ]
+                        }
+                    ]
+                }]
+        });
+
+        const post = postData.get({ plain: true });
+
+        res.render("post", { post, logged_in: true });
+    } catch {
+        res.status(500).json(response)
     }
 });
 
