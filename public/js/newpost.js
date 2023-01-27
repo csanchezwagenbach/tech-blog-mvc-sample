@@ -17,11 +17,11 @@ const response = await fetch ("/api/posts", {
 });
 
 const newPost = await response.json();
-const newPostId = await newPost.id;
 
 
-if (newPostId) {
-    document.location.replace(`/post/${newPostId}`)
+
+if (newPost) {
+    document.location.replace(`/dashboard`)
 }
 
 }
