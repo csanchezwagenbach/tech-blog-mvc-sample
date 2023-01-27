@@ -1,0 +1,17 @@
+<div class="row justify-content-space-between">
+    <p id="profile" class="col-12 col-md-12 col-lg-12 text-center">Welcome back!</p>
+    {{#if posts.length}}
+
+{{!-- If a user has any saved suggestions, all of them will print below. Additionally, each printed suggestion-card has click functionality sending that user to a page with that particular suggestion fleshed out in full. The suggestion's ids are hidden inside each of their respective card within the data-number attribute --}}
+
+    {{#each posts as |post|}}
+    <div class="card suggestion-card border-0 shadow p-3 mb-5 bg-white rounded col-12 col-md-12 col-lg-12" data-number={{suggestion.id}}
+      
+      <div class="card-body">
+        <h5 class="card-title text-capitalize text-center">{{post.title}}</h5>
+      </div>
+    </div>
+    {{/each}}
+    {{/if}}
+  </div>
+</div>
