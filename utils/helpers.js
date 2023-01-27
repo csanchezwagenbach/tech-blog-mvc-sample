@@ -11,4 +11,8 @@ module.exports = {
         new Date(date).getFullYear() 
       }`;
     },
+
+    is_own: (user_id, author_id) => {
+      return user_id === author_id
+    }
   };
