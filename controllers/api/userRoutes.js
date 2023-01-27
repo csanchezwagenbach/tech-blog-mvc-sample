@@ -7,7 +7,7 @@ router.post("/", async (req, res) => {
     try {
         console.log(req.body)
         const userData = await User.create(req.body);
-
+        console.log(userData)
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
@@ -26,7 +26,7 @@ router.post("/login", async (req, res) => {
         if (!userData) {
             res
                 .status(400)
-                .json({ message: "Incorrect user name or password, please try again" });
+                .json({ message: "This one!" });
             return;
         }
 
@@ -35,7 +35,7 @@ router.post("/login", async (req, res) => {
         if (!validPassword) {
             res
                 .status(400)
-                .json({ message: "Incorrect user name or password, please try again" });
+                .json({ message: "Nein!" });
             return;
         }
 
