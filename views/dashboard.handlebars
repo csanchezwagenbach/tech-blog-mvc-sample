@@ -1,9 +1,10 @@
-<div class="row justify-content-space-between blog-card">
+<div class="row justify-content-around">
     <p id="profile" class="col-12 col-md-12 col-lg-12 text-center">Welcome back!</p>
+    <button type="button" class="btn btn-dark col-3 align-self-end mb-3" id="new-post">New post</button>
     {{#if posts.length}}
 
     {{#each posts as |post|}}
-    <div class="card border-0 shadow p-3 mb-5 bg-white rounded col-12 col-md-12 col-lg-12" data-number={{post.id}}
+    <div class="card border-0 shadow p-3 mb-5 bg-white rounded col-12 col-md-12 col-lg-12 blog-card" data-number={{post.id}}
       
       <div class="card-body">
         <h5 class="card-title text-capitalize text-center">{{post.title}}</h5>

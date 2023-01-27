@@ -83,4 +83,12 @@ router.get("/post/:id", withAuth, async (req, res) => {
     }
 });
 
+router.get("/newpost", withAuth, async (req, res) => {
+    try {
+        res.render("newpost", { logged_in: true })
+    } catch {
+        res.status(500).json(response)
+    }
+});
+
 module.exports = router;
