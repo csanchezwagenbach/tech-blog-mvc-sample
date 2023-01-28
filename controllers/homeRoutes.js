@@ -76,8 +76,7 @@ router.get("/post/:id", withAuth, async (req, res) => {
 
 
         const post = postData.get({ plain: true });
-
-        res.render("post", {post, logged_in: true });
+        res.render("post", {post, logged_in: true, own_post: (post.author_id === req.session.user_id) });
     } catch {
         res.status(500).json(response)
     }

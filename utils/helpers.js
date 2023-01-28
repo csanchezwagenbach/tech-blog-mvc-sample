@@ -1,3 +1,5 @@
+const { post } = require("../controllers/homeRoutes");
+
 module.exports = {
     format_time: (date) => {
       return date.toLocaleTimeString();
@@ -12,7 +14,7 @@ module.exports = {
       }`;
     },
 
-    is_own: (user_id, author_id) => {
-      return user_id === author_id
-    }
+    // is_own: () => {
+    //   return req.session.user_id === post.user.id
+    // }
   };

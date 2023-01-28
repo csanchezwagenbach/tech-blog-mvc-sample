@@ -1,3 +1,8 @@
+{{#if own_post}}
+<button type="button" class="btn btn-secondary mb-3" id="edit-post" data-bs-toggle="modal" data-bs-target="#editModal">
+    Edit post
+</button>
+{{/if}}
 <div class="card mb-3">
     <div class="card-body">
         <h5 class="card-title">{{post.title}}</h5>
@@ -21,3 +26,30 @@
         aria-describedby="button-addon1">
 </div>
 {{/if}}
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="input-group">
+                    <span class="input-group-text">Post title</span>
+                    <textarea class="form-control" aria-label="Post title" id="title-update">{{post.title}}</textarea>
+                </div> 
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <span class="input-group-text">Post content</span>
+                    <textarea class="form-control" aria-label="Post content" id="content-update" rows="10">{{post.content}}</textarea>
+                </div>
+                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger" id="delete-post">Delete post</button>
+                    <button type="button" class="btn btn-outline-success" id="save-change">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
