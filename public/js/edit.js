@@ -1,8 +1,9 @@
 const deletePostButton = document.querySelector("#delete-post");
 
-const saveEditsButton = document.querySelector("#save-change");
+const saveNewTitle = document.querySelector("#save-new-title");
 const titleUpdate = document.querySelector("#title-update");
 const contentUpdate = document.querySelector("#content-update");
+const saveNewContent = document.querySelector("#save-new-content")
 
 async function deletePostHandler () {
     let array = document.location.pathname.split("/");
@@ -20,19 +21,17 @@ async function deletePostHandler () {
     }
 }
 
-async function updatePostHandler () {
+async function updateTitleHandler () {
     let array = document.location.pathname.split("/");
     let post_id = array[array.length-1];
     let newTitle = titleUpdate.value;
-    let newContent = contentUpdate.value;
 
     console.log(post_id);
     console.log(newTitle);
-    console.log(newContent);
 
-    const response = await fetch ("/api/posts", {
+    const response = await fetch ("/api/posts/title", {
         method: "PUT",
-        body: JSON.stringify({ post_id, newTitle, newContent }),
+        body: JSON.stringify({ post_id, newTitle }),
         headers: {
             "Content-Type": "application/json"
         }
@@ -46,4 +45,4 @@ async function updatePostHandler () {
 
 
 deletePostButton.addEventListener("click", deletePostHandler);
-saveEditsButton.addEventListener("click", updatePostHandler);
+saveNewTitle.addEventListener("click", updateTitleHandler);

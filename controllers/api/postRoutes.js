@@ -18,21 +18,17 @@ router.post("/", async (req, res) => {
     }
 });
 
-router.put("/", async (req, res) => {
+router.put("/title", async (req, res) => {
     try {
         const post_id = req.body.post_id;
         const title = req.body.newTitle;
-        const content = req.body.newContent;
-        const updatedPostTitle = await Post.update(title, {
+
+        const updatedPostTitle = await Post.update({ title: title }, {
             where: {
                 id: post_id
             }
         });
-        const updatedPostContent = await Post.update(content, {
-            where: {
-                id: post_id
-            }
-        })
+
         res.status(200).json(updatedPostTitle)
     } catch (err) {
         res.status(500).json(err)
