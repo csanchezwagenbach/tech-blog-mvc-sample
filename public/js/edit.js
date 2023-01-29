@@ -8,6 +8,7 @@ const saveNewContent = document.querySelector("#save-new-content")
 async function deletePostHandler () {
     let array = document.location.pathname.split("/");
     let post_id = array[array.length-1];
+
     const response = await fetch ("/api/posts", {
         method: "DELETE",
         body: JSON.stringify({ post_id }),
@@ -26,8 +27,7 @@ async function updateTitleHandler () {
     let post_id = array[array.length-1];
     let newTitle = titleUpdate.value;
 
-    console.log(post_id);
-    console.log(newTitle);
+
 
     const response = await fetch ("/api/posts/title", {
         method: "PUT",
