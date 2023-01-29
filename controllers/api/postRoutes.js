@@ -35,6 +35,23 @@ router.put("/title", async (req, res) => {
     }
 });
 
+router.put("/content", async (req, res) => {
+    try {
+        const post_id = req.body.post_id;
+        const content = req.body.newContent;
+
+        const updatedPostContent = await Post.update({ content: content }, {
+            where: {
+                id: post_id
+            }
+        });
+
+        res.status(200).json(updatedPostContent)
+    } catch (err) {
+        res.status(500).json(err)
+    }
+});
+
 router.delete("/", async (req, res) => {
     try {
         const post_id = req.body.post_id;

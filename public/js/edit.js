@@ -43,6 +43,25 @@ async function updateTitleHandler () {
     }
 }
 
+async function updateContentHandler () {
+    let array = document.location.pathname.split("/");
+    let post_id = array[array.length-1];
+    let newContent = contentUpdate.value;
+
+    const response = await fetch ("/api/posts/content", {
+        method: "PUT",
+        body: JSON.stringify({ post_id, newContent }),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    });
+
+    if (response.ok) {
+        document.location.reload()
+    }
+}
+
 
 deletePostButton.addEventListener("click", deletePostHandler);
 saveNewTitle.addEventListener("click", updateTitleHandler);
+saveNewContent.addEventListener("click", updateContentHandler); 
